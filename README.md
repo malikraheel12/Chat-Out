@@ -1,109 +1,107 @@
-# ChatHub
+# Chat Out
 
-### Aplicativo de chat em tempo real desenvolvido com React Native e Firebase
+A real-time chat application built with React Native, Expo, and Firebase.
 
-## Recursos
+## Table of Contents
 
-- **Mensagens em Tempo Real:** Utilizando o Firestore Database.
-- **Autenticação de Usuários:** Segurança garantida pelo Firebase Authentication.
-- **Multiplataforma:** Disponível para Android, iOS e Web.
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Firebase Configuration](#firebase-configuration)
 
-## Primeiros Passos
+## Features
 
-### Pré-requisitos
+- **Real-time messaging:** Communicate instantly with friends and colleagues.
+- **User authentication:** Sign up and login with email and password using Firebase Authentication.
+- **Group chats:** Create and join group conversations.
+- **Offline support:** Messages are cached and sent when the connection is restored.
 
-- **Node.js**
-  - Versão 20.14.0 LTS
-  - [Baixe aqui](https://nodejs.org/en)
-- **npm ou Yarn**
-  - npm - Versão 10.8.1 (Instalado junto com o Node.js)
-  - Yarn - Versão 1.22.22
-    - [Baixe aqui](https://classic.yarnpkg.com/en/)
-- **CLI do React Native**
-  - Versão 0.74.2
-    - Instalado com o Expo Framework
-      - [Saiba mais](https://expo.dev/)
-- **Projeto Firebase**
-  - Gratuito
-  - [Comece aqui](https://firebase.google.com/?hl=pt-br)
+## Prerequisites
 
-### Configuração
+Before you begin, ensure you have met the following requirements:
 
-1. **Clonar o Repositório**
-   - Abra o terminal, navegue até uma pasta de projetos e execute:
-     ```bash
-     git clone https://github.com/Molizanee/chathub.git
-     ```
-2. **Instalar as Dependências**
-   - Navegue até a pasta do projeto:
-     ```bash
-     cd chathub
-     ```
-   - Execute:
-     ```bash
-     npm install
-     ```
-3. **Configurar o Projeto Firebase**
+- Node.js (>=14.x)
+- Expo CLI (>=5.x): Install via `npm install -g expo-cli`
+- Firebase project: Set up a Firebase project with Authentication, Firestore, and Storage enabled.
 
-   - Acesse o [Firebase](https://firebase.google.com/?hl=pt-br) e entre com sua conta Google.
-   - Crie um projeto chamado chathub, aceite os termos e prossiga.
-   - **Configuração do Google Analytics não é necessária.**
-   - Adicione um **app Web** com o nome do projeto (chathub).
-   - Instale o Firebase no código do seu projeto:
-     ```bash
-     npm install firebase
-     ```
-   - Copie as chaves de configuração do `firebaseConfig`:
-   - Dentro da aba de **criação** na lateral esquerda do dashboard do Firebase:
-     - Habilite o serviço de **Authentication**
-       - Habilite o método de login via **E-mail/Senha**
-     - Crie um banco de dados noSQL com o **Firestore**
-       - Ajuste o local do banco para **southamerica-east1 (São Paulo)**
-       - Marque para iniciar no **modo de teste**
-   - Volte para dentro do projeto no seu editor de código
+## Installation
 
-4. **Configurar Variáveis de Ambiente**
+1. **Clone the repository:**
 
-   - Crie um arquivo `.env` na raiz do projeto e adicione as seguintes linhas (Adicione os valores **sem as aspas**):
-     ```plaintext
-     EXPO_PUBLIC_API_KEY=Sua_Api_Key
-     EXPO_PUBLIC_AUTH_DOMAIN=Seu_Auth_Domain
-     EXPO_PUBLIC_PROJECT_ID=Seu_Project_ID
-     EXPO_PUBLIC_STORAGE_BUCKET=Seu_Storage_Bucket
-     EXPO_PUBLIC_MESSAGING_SENDER_ID=Seu_Messaging_Sender_Id
-     EXPO_PUBLIC_APP_ID=Seu_App_Id
-     EXPO_PUBLIC_MEASUREMENT_ID=Seu_Measurement_Id
-     ```
+    ```sh
+    git clone https://github.com/malikraheel12/Chat-Out.git
+    cd Chat-Out
+    ```
 
-5. **Executar o Projeto**
-   - Inicie o projeto com:
-     ```bash
-     npx expo start
-     ```
-   - Abra o app em um emulador Android ou iOS. Também é possível testar o app em seu próprio celular baixando o aplicativo Expo Go e escaneando o código QR.
+2. **Install dependencies:**
 
-## Como Utilizar o ChatHub
+    ```sh
+    npm install
+    ```
 
-- Para começar a conversar, na tela de contatos, adicione um contato usando o e-mail registrado no ChatHub. Após o contato ser adicionado, você pode enviar mensagens que serão recebidas automaticamente pela outra conta.
+3. **Configure Firebase:**
 
-  - **Observação:** Ao adicionar um contato, a outra conta não adicionará automaticamente o seu e-mail à lista de contatos dela, mas receberá suas mensagens quando enviadas normalmente.
+    - Follow the [Firebase Configuration](#firebase-configuration) section to set up your Firebase project.
 
-## Estrutura do Projeto
+4. **Run the app:**
 
-O projeto ChatHub está organizado em três pastas principais, cada uma com um propósito específico dentro da arquitetura do aplicativo:
+    ```sh
+    expo start
+    ```
 
-- **app/** Esta pasta contém todas as telas do aplicativo, organizando a interface com a qual o usuário interage. Cada tela é implementada como um componente React Native, facilitando a navegação e a manutenção do código.
+    This will start the Expo development server. You can then run the app on an iOS or Android simulator, or on a physical device using the Expo Go app.
 
-- **components/** Contém os componentes reutilizáveis que compõem as interfaces das telas. Esses componentes incluem botões, campos de entrada, e outros elementos de UI que são utilizados em várias partes do aplicativo, promovendo a consistência e reduzindo a duplicidade de código.
+## Usage
 
-- **Firebase/** Armazena as funções responsáveis pela comunicação do aplicativo com o Firebase Firestore. Estas funções são usadas para manipular os dados dos contatos e dos chats, incluindo operações como adicionar, remover, e atualizar informações, além de escutar mudanças em tempo real para atualizar a interface do usuário conforme necessário.
+1. **Sign up or log in:**
+    - Users can sign up with an email and password or log in with existing credentials.
 
-## Informações Adicionais
+2. **Start a chat:**
+    - Navigate to the chat screen and start a new conversation or join an existing one.
 
-ChatHub é um projeto desenvolvido com o intuito de proporcionar uma experiência prática no uso de tecnologias emergentes no desenvolvimento de apps. Utilizando React Native para a construção da interface do usuário e integrando com Firebase Authentication e Firestore para gerenciamento de autenticação e dados, este projeto serve como um excelente recurso de aprendizado para desenvolvedores que desejam aprofundar seus conhecimentos em:
+3. **Send messages:**
+    - Type a message and send it in real-time. Users will receive notifications for new messages.
 
-- **React Native:** Explore como construir aplicativos multiplataforma eficientes e dinâmicos.
-- **Firebase Authentication:** Aprenda a implementar sistemas de autenticação robustos e seguros.
-- **Firebase Firestore:** Ganhe experiência com este serviço de banco de dados NoSQL para manipular e armazenar dados em tempo real.
+## Firebase Configuration
 
-ChatHub não apenas exemplifica a integração dessas tecnologias, mas também oferece um cenário real de aplicação, permitindo assim para fins de estudos o ganho de conhecimento em desenvolvimento mobile.
+To connect the app to Firebase, follow these steps:
+
+1. **Create a Firebase project:**
+    - Go to the [Firebase Console](https://console.firebase.google.com/) and create a new project.
+
+2. **Enable Authentication:**
+    - Go to the "Authentication" section and enable Email/Password authentication.
+
+3. **Set up Firestore:**
+    - Go to the "Firestore Database" section and create a database. Set the security rules as needed.
+
+4. **Enable Storage:**
+    - Go to the "Storage" section and enable Firebase Storage for media uploads.
+
+5. **Add Firebase configuration to your app:**
+    - Download the `google-services.json` (for Android) and `GoogleService-Info.plist` (for iOS) from your Firebase project settings.
+    - Place them in the appropriate directories:
+        - `android/app/google-services.json`
+        - `ios/GoogleService-Info.plist`
+
+6. **Update Firebase configuration:**
+
+    Create a `firebaseConfig.js` file in the `src/config` directory with your Firebase credentials:
+
+    ```js
+    // src/config/firebaseConfig.js
+    import { initializeApp } from 'firebase/app';
+
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_AUTH_DOMAIN",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_STORAGE_BUCKET",
+      messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+      appId: "YOUR_APP_ID",
+    };
+
+    const app = initializeApp(firebaseConfig);
+    export default app;
+    ```
